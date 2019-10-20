@@ -25,3 +25,18 @@ bb = (157,"Marek")
 cb = (1654,"Mariusz")
 dd = ab,bb,cb
 print(dd)
+#zadanie9
+slownik = dict(dd)
+print(slownik)
+
+#zadanie10
+lis = [48444,221912,48444,121231,6453242,48444,996953,5346,654672,48444]
+s = set(lis)
+print(s)
+#zadanie11
+for i in range(10):
+    print(i + 1)
+#zadanie 12
+for i in range(100,20,-5):
+    print(i)
+    
