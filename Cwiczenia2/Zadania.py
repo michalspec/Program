@@ -23,3 +23,32 @@ def slownik(data_text):
 def deleter(text,letter):
     text = text.replace(letter,"")
 
+#zadanie4
+def convert(degrees,temperature_type):
+    if(temperature_type == 'kel'):
+        kel = degrees + 273.15
+        return kel
+    elif(temperature_type == 'faren'):
+        farenh = 32 + 9 / 5 * degrees
+        return farenh
+    else:
+        rankine = 9/5 *degrees + 273.15
+        return rankine
+
+#zadanie5
+class Calculator:
+
+    def add(number1,number2):
+        return number1 + number2
+    def difference(number1, number2):
+        return number1 - number2
+    def multiply(number1,number2):
+        return number1*number2
+    def divide(number1,number2):
+        return number1/number2
+#zadanie6
+class ScienceCalculator(Calculator):
+    def power(base,index):
+        return pow(base,index)
+
+
