@@ -1,3 +1,4 @@
+from Cwiczenia2 import file_manager as fm
 #zadnie1
 def podzial(a_lista,b_lista):
     res =[]
@@ -51,4 +52,11 @@ class ScienceCalculator(Calculator):
     def power(base,index):
         return pow(base,index)
 
+#zadanie7
+def reverse(text):
+    return text[::-1]
 
+
+#zadanie9
+file = []
+fm.FileManager.read_file(file)
