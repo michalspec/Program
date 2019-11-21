@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'Bookstore.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': '',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'mysql.connector.django',
+        'HOST':'213.184.8.199',
+        'PORT':'3306',
+        'NAME': 'wroblewskim',
+        'USER':'wroblewskim',
+        'PASSWORD':'michal'
     }
 }
 

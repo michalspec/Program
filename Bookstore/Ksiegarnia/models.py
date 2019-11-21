@@ -19,16 +19,17 @@ class Employee(models.Model):
 class Book(models.Model):
     Title = models.CharField(max_length=45)
     Author = models.CharField(max_length=45)
-    Price = models.DecimalField()
+    Price = models.DecimalField(decimal_places=2, max_digits=5)
     Publisher = models.CharField(max_length=45)
 
 class Magazine(models.Model):
     Amount = models.IntegerField()
     Book = models.ForeignKey(Book, on_delete=models.CASCADE)
 
-class Transaction:
-    Price = models.DecimalField(),
+class Transaction(models.Model):
+    Price = models.DecimalField(decimal_places=2, max_digits=5),
     Employee = models.ForeignKey(Employee, on_delete=models.CASCADE)
-    Customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
     Book = models.ForeignKey(Book, on_delete=models.CASCADE)
+    Customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
+
 
