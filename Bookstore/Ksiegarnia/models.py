@@ -27,9 +27,11 @@ class Magazine(models.Model):
     Book = models.ForeignKey(Book, on_delete=models.CASCADE)
 
 class Transaction(models.Model):
-    Price = models.DecimalField(decimal_places=2, max_digits=5),
+    Price = models.DecimalField(decimal_places=2, max_digits=5)
     Employee = models.ForeignKey(Employee, on_delete=models.CASCADE)
     Book = models.ForeignKey(Book, on_delete=models.CASCADE)
     Customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
+
+owner = models.ForeignKey('auth.User', related_name='books', on_delete=models.CASCADE)
 
 

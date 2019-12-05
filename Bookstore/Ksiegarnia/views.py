@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from .models import *
 from .serializers import *
 from rest_framework import generics
 # Create your views here.
+
 class CustomerList(generics.ListCreateAPIView):
     queryset = Customer.objects.all()
     serializer_class = CustomerSerializer
@@ -34,6 +34,7 @@ class MagazineDetail(generics.RetrieveUpdateDestroyAPIView):
 class TransactionList(generics.ListCreateAPIView):
     queryset = Transaction.objects.all()
     serializer_class = TransactionSerializer
+
 class TransactionDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Transaction.objects.all()
     serializer_class = TransactionSerializer

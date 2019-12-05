@@ -18,7 +18,6 @@ from django.urls import path, include
 from Ksiegarnia.views import *
 from rest_framework.urlpatterns import format_suffix_patterns
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path(r'api-auth/', include('rest_framework.urls')),
@@ -35,9 +34,8 @@ urlpatterns = [
     path('MagazineList/', MagazineList.as_view()),
     path('MagazineDetail/<int:pk>', MagazineDetail.as_view()),
 
-    path('TransictionList/', TransactionList.as_view()),
-    path('TranscitionDetail/<int:pk>', TransactionDetail.as_view())
-
+    path('TransactionList/', TransactionList.as_view()),
+    path('TransactionDetail/<int:pk>', TransactionDetail.as_view()),
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
