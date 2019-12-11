@@ -1,5 +1,7 @@
 from rest_framework import serializers
 from .models import *
+from django.contrib.auth.models import User
+
 class BookSerializer(serializers.ModelSerializer):
     class Meta:
         model = Book
@@ -25,3 +27,9 @@ class MagazineSerializer(serializers.ModelSerializer):
         model = Magazine
         fields = '__all__'
 
+class UserSerializer(serializers.ModelSerializer):
+    books = serializers.PrimaryKeyRelatedField(many=True, queryset=Book.objects.all())
+
+    class Meta:
+        model = User
+        fields = ['title', 'author', 'publisher', 'price']

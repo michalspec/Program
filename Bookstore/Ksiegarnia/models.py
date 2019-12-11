@@ -21,6 +21,7 @@ class Book(models.Model):
     Author = models.CharField(max_length=45)
     Price = models.DecimalField(decimal_places=2, max_digits=5)
     Publisher = models.CharField(max_length=45)
+    owner = models.ForeignKey('auth.User', related_name='books', on_delete=models.CASCADE)
 
 class Magazine(models.Model):
     Amount = models.IntegerField()
@@ -32,6 +33,6 @@ class Transaction(models.Model):
     Book = models.ForeignKey(Book, on_delete=models.CASCADE)
     Customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
 
-owner = models.ForeignKey('auth.User', related_name='books', on_delete=models.CASCADE)
+
 
 
