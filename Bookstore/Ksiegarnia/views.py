@@ -13,6 +13,10 @@ def home(request):
     context={}
     return render(request,template,context)
 
+def home(request):
+    content = 'Hello my gold'
+    return HttpResponse(content)
+
 class BookList(generics.ListCreateAPIView):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
